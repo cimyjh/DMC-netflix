@@ -1,0 +1,8 @@
+rootProject.name = 'DMC-netflix'
+include 'product'
+include 'display'
+include 'eureka-server'
+include 'zuul'
+include 'cvs'
+include 'cvs'
+
