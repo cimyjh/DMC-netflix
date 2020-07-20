@@ -41,8 +41,6 @@ public class CVSApiController {
         return eventList;
     }
 
-
-
     @GetMapping("/v1/event/searchByCategory")
     public List<EventListResponseDto> searchByCategory(EventCategorySearchCondition condition){
         List<EventListResponseDto> eventList = eventRepository.searchByCategory(condition);
