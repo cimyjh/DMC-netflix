@@ -7,14 +7,19 @@ server:
 
 zuul:
   routes:
-    product:
+    cvs:
       path: /cvs/**
-      serviceId: product
+      serviceId: cvs
+      stripPrefix: false
+    fund:
+      path: /fund/**
+      serviceId: fund
       stripPrefix: false
     display:
-      path: /fund/**
+      path: /display/**
       serviceId: display
       stripPrefix: false
+
   ribbon-isolation-strategy: thread
   thread-pool:
     use-separate-thread-pools: true
@@ -24,8 +29,13 @@ eureka:
   instance:
     non-secure-port: ${server.port}
     prefer-ip-address: true
+    hostname: localhost
   client:
-    serviceUrl:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+    service-url:
       defaultZone: http://localhost:8761/eureka/
 
 hystrix:
