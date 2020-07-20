@@ -1,0 +1,55 @@
+version: '3.7'
+services:
+    eurekaserver:
+     image: dmc/eureka-server
+     ports: 
+     - "8761:8761"
+
+    zuulserver:
+        image: dmc/zuul
+        ports: 
+         - "8765:8765"
+        environment:
+            PROFILE: "default"
+            SERVER_PORT: "8765"
+            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            # EUREKASERVER_PORT:   "8761"
+            EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/
+        
+    
+    cvs:
+        image: dmc/cvs
+        ports: 
+         - "8080:8080"
+        environment:
+            PROFILE: "default"
+            SERVER_PORT: "8080"
+            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            # EUREKASERVER_PORT:   "8761"
+            ZUULSERVER_PORT:     "8765"
+            EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/
+
+    
+    fund:
+        image: dmc/fund
+        ports: 
+         - "8081:8081"
+        environment:
+            PROFILE: "default"
+            SERVER_PORT: "8081"
+            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            # EUREKASERVER_PORT:   "8761"
+            ZUULSERVER_PORT:     "8765"
+            EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/
+        
+    display:
+        image: dmc/display
+        ports: 
+         - "8082:8082"
+        environment:
+            PROFILE: "default"
+            SERVER_PORT: "8082"
+            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            # EUREKASERVER_PORT:   "8761"
+            ZUULSERVER_PORT:     "8765"
+            EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/ 

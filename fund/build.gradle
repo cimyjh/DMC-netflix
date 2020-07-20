@@ -103,3 +103,16 @@ compileQuerydsl {
     options.annotationProcessorPath = configurations.querydsl
 }
 //querydsl 추가 끝
+
+
+ext {
+    set('snippetsDir', file("build/generated-snippets"))
+    BUILD_VERSION = new Date().format("yyyyMMddHHmmss") // 빌드한 시간을 Image Tag 로 표시하기 위하여 사용한다.
+}
+
+docker {
+    name "dmc/fund"
+    tags "${project.version}", "${BUILD_VERSION}"
+    files tasks.bootJar.outputs.files
+    buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])
+}
