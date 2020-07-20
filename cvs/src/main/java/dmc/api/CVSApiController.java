@@ -41,13 +41,6 @@ public class CVSApiController {
         return eventList;
     }
 
-    @RequestMapping("/{eventName}")
-    @ResponseBody
-    public String Event(@PathVariable String eventName){
-        return fegignEventService.getProductInfo(eventName);
-    }
-
-
 
 
     @GetMapping("/v1/event/searchByCategory")

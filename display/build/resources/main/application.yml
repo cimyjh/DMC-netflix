@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
@@ -24,7 +24,13 @@ hystrix:
         requestVolumeThreshold: 1   # Minimum number of request to calculate circuit breaker's health. default 20
         errorThresholdPercentage: 50 # Error percentage to open circuit. default 50
 
-product:
+cvs:
+  ribbon:
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 1
+
+
+fund:
   ribbon:
     MaxAutoRetries: 0
     MaxAutoRetriesNextServer: 1
