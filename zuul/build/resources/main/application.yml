@@ -8,11 +8,11 @@ server:
 zuul:
   routes:
     product:
-      path: /products/**
+      path: /cvs/**
       serviceId: product
       stripPrefix: false
     display:
-      path: /displays/**
+      path: /fund/**
       serviceId: display
       stripPrefix: false
   ribbon-isolation-strategy: thread

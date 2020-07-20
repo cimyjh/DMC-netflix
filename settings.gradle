@@ -5,4 +5,6 @@ include 'eureka-server'
 include 'zuul'
 include 'cvs'
 include 'cvs'
+include 'fund'
+include 'fund'
 

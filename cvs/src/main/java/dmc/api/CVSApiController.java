@@ -10,9 +10,9 @@ import dmc.domain.news.NewsRepository;
 import dmc.domain.news.dto.NewsCategorySearchCondition;
 import dmc.domain.news.dto.NewsListResponseDto;
 import dmc.domain.news.dto.NewsNameSearchCondition;
+import dmc.service.FegignEventService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +22,7 @@ public class CVSApiController {
 
     private final EventRepository eventRepository;
     private final NewsRepository newsRepository;
+    private final FegignEventService fegignEventService;
 
 
     @GetMapping("/v1/event")
@@ -39,6 +40,15 @@ public class CVSApiController {
 
         return eventList;
     }
+
+    @RequestMapping("/{eventName}")
+    @ResponseBody
+    public String Event(@PathVariable String eventName){
+        return fegignEventService.getProductInfo(eventName);
+    }
+
+
+
 
     @GetMapping("/v1/event/searchByCategory")
     public List<EventListResponseDto> searchByCategory(EventCategorySearchCondition condition){
