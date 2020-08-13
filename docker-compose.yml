@@ -12,7 +12,7 @@ services:
         environment:
             # PROFILE: "default"
             SERVER_PORT: "8765"
-            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            EUREKASERVER_URI: "http://localhost:8761/eureka/"
             EUREKASERVER_PORT:   "8761"
             EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/
         
@@ -24,7 +24,7 @@ services:
         environment:
             # PROFILE: "default"
             SERVER_PORT: "8080"
-            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            EUREKASERVER_URI: "http://localhost:8761/eureka/"
             EUREKASERVER_PORT:   "8761"
             ZUULSERVER_PORT:     "8765"
             EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/
@@ -37,7 +37,7 @@ services:
         environment:
             # PROFILE: "default"
             SERVER_PORT: "8081"
-            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            EUREKASERVER_URI: "http://localhost:8761/eureka/"
             EUREKASERVER_PORT:   "8761"
             ZUULSERVER_PORT:     "8765"
             EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/
@@ -49,7 +49,7 @@ services:
         environment:
             # PROFILE: "default"
             SERVER_PORT: "8082"
-            # EUREKASERVER_URI: "http://127.0.0.1:8761/eureka/"
+            EUREKASERVER_URI: "http://localhost:8761/eureka/"
             EUREKASERVER_PORT:   "8761"
             ZUULSERVER_PORT:     "8765"
             EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://localhost:8761/eureka/ 

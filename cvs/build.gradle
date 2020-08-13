@@ -112,7 +112,7 @@ compileQuerydsl {
 
 
 docker {
-    name "dmc/cvs"
+    name "dmc/cvstrue"
     tags "${project.version}", "${BUILD_VERSION}"
     files tasks.bootJar.outputs.files
     buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])

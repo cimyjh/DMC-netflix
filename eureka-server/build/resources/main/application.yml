@@ -13,8 +13,6 @@ eureka:
     register-with-eureka: false             # Only for local stand-alone development
     fetch-registry: false                   # Only for local stand-alone development
     service-url:
-      defaultZone: http://localhost:8761  # Default Value. Just for demo
+      defaultZone: http://localhost:8761/eureka  # Default Value. Just for demo
   instance:
-    prefer-ip-address: true
-    hostname: localhost
-    # Use ip address instead of hostname from OS when reporting myself to eureka server
+    prefer-ip-address: true                 # Use ip address instead of hostname from OS when reporting myself to eureka server

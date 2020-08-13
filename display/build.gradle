@@ -58,7 +58,7 @@ dependencyManagement {
 }
 
 docker {
-    name "dmc/display"
+    name "dmc/displaytrue"
     tags "${project.version}", "${BUILD_VERSION}"
     files tasks.bootJar.outputs.files
     buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])

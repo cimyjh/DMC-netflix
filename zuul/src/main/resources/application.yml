@@ -31,8 +31,8 @@ eureka:
     prefer-ip-address: true
     hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     server:
       waitTimeInMsWhenSyncEmpty: 0
     service-url:
